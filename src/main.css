@@ -1,0 +1,16 @@
+/* 
+	Default 16px * 0.625 = 10rem
+	1.2rem = 12px
+*/
+
+* {
+   box-sizing: border-box;
+}
+html {
+   font-size: 62.5%;
+}
+
+body {
+   font-size: 1.6rem;
+   font-family: sans-serif;
+}

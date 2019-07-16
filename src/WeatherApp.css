@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+.WeatherAppContainer {
+   --light-gray: #acacac;
+   --dark-green: #00728c;
+   --light-green: #00888c;
+   --weather-app-margin-top-bottom: 30px;
+   --container-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.5);
+}
+
+.WeatherAppContainer {
+   background: linear-gradient(
+      to right top,
+      #00ee8c,
+      #00d1a5,
+      #00b2ae,
+      #0092a5,
+      #00728c
+   );
+   font-family: 'Montserrat', sans-serif;
+   font-size: 1.6rem;
+   color: #fff;
+   padding: var(--weather-app-margin-top-bottom) 0;
+   min-height: 100vh;
+}
+
+.WeatherApp {
+   border-radius: 8px;
+   box-shadow: var(--container-shadow);
+   max-width: 1024px;
+   padding: 30px 30px;
+   margin: 0 auto;
+   min-height: calc(100vh - calc(2 * var(--weather-app-margin-top-bottom)));
+}
+
+@media only screen and (max-width: 480px) {
+   .WeatherApp {
+      padding: 10px;
+      margin: var(--weather-app-margin-top-bottom) auto;
+      min-height: calc(100vh - calc(2 * var(--weather-app-margin-top-bottom)));
+   }
+}

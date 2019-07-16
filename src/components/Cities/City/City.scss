@@ -1,0 +1,354 @@
+.City {
+   background: rgba(65, 65, 65, 0.05);
+   box-shadow: var(--container-shadow);
+   width: 49%;
+   padding: 2rem;
+   margin: 0 0 2rem 0;
+   position: relative;
+}
+
+.LoadingCity {
+   background-color: rgba(155, 155, 155, 0.5);
+   position: absolute;
+   height: 100%;
+   width: 100%;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   z-index: 2;
+}
+
+.Today {
+   .CityName {
+      font-size: 2.4rem;
+      margin: 0 0 4rem;
+   }
+   .Today__Info {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .Today__Info__InfoLeft {
+         display: flex;
+         flex-direction: column;
+         .Today__Info__InfoLeft__Day {
+            font-size: 2.4rem;
+         }
+         .Today__Info__InfoLeft__Date {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+         }
+         .Today__Info__InfoLeft__WeatherInfo {
+            font-size: 1.2rem;
+            margin: auto 0 0;
+            ul {
+               list-style: none;
+               margin: 0;
+               padding: 0;
+               li {
+                  margin: 0 0 1rem;
+                  span {
+                     display: inline-block;
+                     width: 6rem;
+                  }
+                  &:last-child {
+                     margin: 0 0 0.5rem;
+                  }
+               }
+            }
+         }
+      }
+      .Today__Info__Middle {
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         .Today__Info__Middle__Icon {
+            font-size: 12rem;
+         }
+         .Today__Info__Middle__Text {
+            margin: 2rem 0 0;
+            font-size: 3rem;
+            text-align: center;
+         }
+      }
+      .Today__Info__Right {
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         .Today__Info__Right__Temp {
+            font-size: 4.8rem;
+            text-align: right;
+            &:nth-child(2) {
+               margin: 2rem 0 0;
+            }
+         }
+      }
+   }
+}
+
+.Forecasts {
+   display: flex;
+   justify-content: space-between;
+   margin: 2rem 0 0;
+}
+
+// City Media queries
+@media only screen and (max-width: 959px) {
+   .City {
+      margin: 0 0 10px 0;
+      .Today {
+         .CityName {
+            font-size: 2.4rem;
+            margin: 0 0 30px;
+         }
+         .Today__Info {
+            .Today__Info__Middle {
+               .Today__Info__Middle__Icon {
+                  font-size: 8rem;
+               }
+            }
+            .Today__Info__Right {
+               .Today__Info__Right__Temp {
+                  font-size: 2.2rem;
+                  &:nth-child(2) {
+                     margin: 10px 0 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 920px) {
+   .City {
+      width: 70%;
+      margin: 0 auto 2rem;
+      .Today {
+         .CityName {
+            font-size: 3.2rem;
+            margin: 0 0 30px;
+         }
+         .Today__Info {
+            .Today__Info__InfoLeft {
+               .Today__Info__InfoLeft__Day {
+                  font-size: 2.8rem;
+               }
+               .Today__Info__InfoLeft__Date {
+                  font-size: 1.8rem;
+                  margin: 1rem 0;
+               }
+               .Today__Info__InfoLeft__WeatherInfo {
+                  font-size: 1.6rem;
+                  ul {
+                     li {
+                        span {
+                           width: 9rem;
+                        }
+                        &:last-child {
+                           margin: 0 0 0.5rem;
+                        }
+                     }
+                  }
+               }
+            }
+            .Today__Info__Middle {
+               .Today__Info__Middle__Icon {
+                  font-size: 12rem;
+               }
+            }
+            .Today__Info__Right {
+               .Today__Info__Right__Temp {
+                  font-size: 4rem;
+                  &:nth-child(2) {
+                     margin: 10px 0 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 830px) {
+   .City {
+      width: 90%;
+      margin: 0 auto 2rem;
+   }
+}
+
+@media only screen and (max-width: 680px) {
+   .City {
+      .Today {
+         .CityName {
+            font-size: 2.4rem;
+         }
+         .Today__Info {
+            .Today__Info__InfoLeft {
+               .Today__Info__InfoLeft__Day {
+                  font-size: 2.2rem;
+               }
+               .Today__Info__InfoLeft__Date {
+                  font-size: 1.4rem;
+                  margin: 1rem 0;
+               }
+               .Today__Info__InfoLeft__WeatherInfo {
+                  font-size: 1.2rem;
+                  ul {
+                     li {
+                        span {
+                           width: 7rem;
+                        }
+                     }
+                  }
+               }
+            }
+            .Today__Info__Middle {
+               .Today__Info__Middle__Icon {
+                  font-size: 10rem;
+               }
+            }
+            .Today__Info__Right {
+               .Today__Info__Right__Temp {
+                  font-size: 3.2rem;
+                  &:nth-child(2) {
+                     margin: 10px 0 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 560px) {
+   .City {
+      .Today {
+         .CityName {
+            font-size: 2.4rem;
+         }
+         .Today__Info {
+            .Today__Info__InfoLeft {
+               .Today__Info__InfoLeft__Day {
+                  font-size: 2.2rem;
+               }
+               .Today__Info__InfoLeft__Date {
+                  font-size: 1.4rem;
+                  margin: 1rem 0;
+               }
+               .Today__Info__InfoLeft__WeatherInfo {
+                  font-size: 1.2rem;
+                  ul {
+                     li {
+                        span {
+                           width: 7rem;
+                        }
+                     }
+                  }
+               }
+            }
+            .Today__Info__Middle {
+               .Today__Info__Middle__Icon {
+                  font-size: 8rem;
+               }
+            }
+            .Today__Info__Right {
+               .Today__Info__Right__Temp {
+                  font-size: 2.4rem;
+                  &:nth-child(2) {
+                     margin: 10px 0 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 480px) {
+   .City {
+      width: 95%;
+      .Today {
+         .CityName {
+            font-size: 2.4rem;
+         }
+         .Today__Info {
+            .Today__Info__InfoLeft {
+               .Today__Info__InfoLeft__Day {
+                  font-size: 2.2rem;
+               }
+               .Today__Info__InfoLeft__Date {
+                  font-size: 1.4rem;
+                  margin: 1rem 0;
+               }
+               .Today__Info__InfoLeft__WeatherInfo {
+                  font-size: 1.2rem;
+                  ul {
+                     li {
+                        span {
+                           width: 7rem;
+                        }
+                     }
+                  }
+               }
+            }
+            .Today__Info__Middle {
+               .Today__Info__Middle__Icon {
+                  font-size: 6rem;
+               }
+               .Today__Info__Middle__Text {
+                  font-size: 2rem;
+               }
+            }
+            .Today__Info__Right {
+               .Today__Info__Right__Temp {
+                  font-size: 2.4rem;
+                  &:nth-child(2) {
+                     margin: 10px 0 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
+@media only screen and (max-width: 420px) {
+   .City {
+      .Today {
+         .CityName {
+            font-size: 2rem;
+         }
+         .Today__Info {
+            .Today__Info__InfoLeft {
+               .Today__Info__InfoLeft__Day {
+                  font-size: 2rem;
+               }
+               .Today__Info__InfoLeft__Date {
+                  font-size: 1.2rem;
+                  margin: 1rem 0;
+               }
+            }
+            .Today__Info__Middle {
+               .Today__Info__Middle__Icon {
+                  font-size: 5rem;
+               }
+               .Today__Info__Middle__Text {
+                  font-size: 1.6rem;
+               }
+            }
+            .Today__Info__Right {
+               .Today__Info__Right__Temp {
+                  font-size: 1.6rem;
+                  &:nth-child(2) {
+                     margin: 10px 0 0;
+                  }
+               }
+            }
+         }
+      }
+   }
+}
