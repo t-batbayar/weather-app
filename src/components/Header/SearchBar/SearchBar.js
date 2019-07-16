@@ -41,19 +41,29 @@ function SearchBar() {
    };
 
    let suggestionsJsx;
-   // if (fetching) {
-   //    suggestionsJsx = <Loading />;
-   // } else if (fetched && payload.length > 0) {
-   //    suggestionsJsx = (payload.map(({ id, place_name, center }) => (
-   //       <Suggestion key={ id } placeId={ id } placeName={ place_name } lon={ center[0] } lat={ center[1] }></Suggestion>
-   //    )));
-   // } else if (fetched && searchText && payload.length === 0) {
-   //    suggestionsJsx = <SuggestionFailMessage message="Sorry couldn't find the place" />
-   // } else if (error) {
-   //    suggestionsJsx = <SuggestionFailMessage message="Sorry Mapbox API error" />
-   // } else {
-   //    suggestionsJsx = null;
-   // }
+   if (fetching) {
+      suggestionsJsx = <Loading />;
+   } else if (fetched && payload.length > 0) {
+      suggestionsJsx = payload.map(({ id, place_name, center }) => (
+         <Suggestion
+            key={id}
+            placeId={id}
+            placeName={place_name}
+            lon={center[0]}
+            lat={center[1]}
+         />
+      ));
+   } else if (fetched && searchText && payload.length === 0) {
+      suggestionsJsx = (
+         <SuggestionFailMessage message="Sorry couldn't find the place" />
+      );
+   } else if (error) {
+      suggestionsJsx = (
+         <SuggestionFailMessage message="Sorry Mapbox API error" />
+      );
+   } else {
+      suggestionsJsx = null;
+   }
 
    return (
       <div className={styles.SearchBar}>
