@@ -3,7 +3,8 @@
 .WeatherAppContainer {
    --light-gray: #acacac;
    --dark-green: #00728c;
-   --light-green: #00888c;
+   --green: #00888c;
+   --light-green: #00ee8c;
    --weather-app-margin-top-bottom: 30px;
    --container-shadow: 0 2px 8px -4px rgba(0, 0, 0, 0.5);
 }

@@ -1,6 +1,4 @@
 .SearchBar {
-   position: relative;
-   width: 100%;
    .SearchInput {
       color: #fff;
       border: none;
@@ -13,14 +11,6 @@
          outline: 1px solid rgba(255, 255, 255, 0.3);
          border-bottom: 1px solid #fff;
       }
-   }
-   .SearchSuggestions {
-      z-index: 2;
-      position: absolute;
-      bottom: -1px;
-      left: 0;
-      transform: translateY(100%);
-      width: 100%;
    }
    input::placeholder {
       color: #ddd;

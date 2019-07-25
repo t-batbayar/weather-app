@@ -6,7 +6,7 @@ import styles from './City.scss';
 import icons from '../../../assets/icons-class';
 import Forecast from './Forecast/Forecast';
 
-const City = ({ info, updating, placeName }) => {
+const City = React.memo(({ info, updating, placeName }) => {
    const { dt, speed, humidity, pressure, weather, temp } = info[0];
    const forecasts = [...info].slice(1);
 
@@ -132,6 +132,6 @@ const City = ({ info, updating, placeName }) => {
          </div>
       </animated.div>
    );
-};
+});
 
 export default City;

@@ -1,8 +1,12 @@
-import { FETCH_LOCATION_WEATHER_START, RECIEVE_LOCATION_WEATHER, FETCH_LOCATION_WEATHER_FAIL } from './types';
+import {
+   FETCH_LOCATION_WEATHER_START,
+   RECIEVE_LOCATION_WEATHER,
+   FETCH_LOCATION_WEATHER_FAIL
+} from './types';
 
 const OPENWEATHERMAP_API = '8de4dd0e1e2024327b50bf5b3e4b013f';
 const days = '6';
-const units = 'metric'
+const units = 'metric';
 
 const initialState = {
    placeId: '',
@@ -12,7 +16,7 @@ const initialState = {
    error: null,
    payload: {},
    placeName: ''
-}
+};
 
 const fetchLocationWeatherStart = (placeId, placeName) => {
    return {
@@ -25,7 +29,7 @@ const fetchLocationWeatherStart = (placeId, placeName) => {
          placeName
       }
    };
-}
+};
 
 const recieveLocationWeather = (placeId, placeName, payload) => {
    return {
@@ -37,7 +41,7 @@ const recieveLocationWeather = (placeId, placeName, payload) => {
          payload,
          placeName
       }
-   }
+   };
 };
 
 const fetchLocationWeatherFail = (placeId, placeName) => {
@@ -49,20 +53,24 @@ const fetchLocationWeatherFail = (placeId, placeName) => {
          placeName,
          error: true
       }
-   }
+   };
 };
 
-const fetchLocationInfo = (placeId, placeName, lat, lon) => dispatch => {
+const fetchLocationInfo = (placeId, placeName, lon, lat) => dispatch => {
    dispatch(fetchLocationWeatherStart(placeId, placeName));
-   fetch(`https://api.openweathermap.org/data/2.5/forecast/daily?lat=${ lon }&lon=${ lat }&cnt=${ days }&units=${ units }&appid=${ OPENWEATHERMAP_API }`)
+   fetch(
+      `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&cnt=${days}&units=${units}&appid=${OPENWEATHERMAP_API}`
+   )
       .then(response => {
          if (!response.ok) {
             throw Error(response.statusText);
          }
-         return response.json()
+         return response.json();
       })
-      .then((payload) => dispatch(recieveLocationWeather(placeId, placeName, payload)))
-      .catch(() => dispatch(fetchLocationWeatherFail(placeId, placeName)))
-}
+      .then(payload =>
+         dispatch(recieveLocationWeather(placeId, placeName, payload))
+      )
+      .catch(() => dispatch(fetchLocationWeatherFail(placeId, placeName)));
+};
 
 export default fetchLocationInfo;
